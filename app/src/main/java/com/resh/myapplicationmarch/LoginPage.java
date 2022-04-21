@@ -12,13 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener {//implements View.OnClickListener
-    EditText un, pwd, reg;
+    EditText unamer, pwordr;
+
     Button login;
-    int clickcount = 3;
-    String username = "admin";
-    String password = "abc123";
+    int clickcount=3;
+    String uname;
+    String pwd;
     Intent i;
     String user1, pass1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,25 +30,21 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         Button login = (Button) findViewById(R.id.button);
 
 
-        un = (EditText) findViewById(R.id.username);
-        pwd = (EditText) findViewById(R.id.password);
-
         TextView reg = (TextView) findViewById(R.id.user1);
 
-        EditText unamer= (EditText) findViewById(R.id.username1);
-        EditText pwordr= (EditText) findViewById(R.id.password1);
+        unamer = (EditText) findViewById(R.id.username);
+        pwordr = (EditText) findViewById(R.id.password);
 
-        /*i=getIntent();
-        String userr = i.getStringExtra("user1");
-        String passwordr = i.getStringExtra("pass1");
-        username.setText("+userr");
-        password.setText("passwordr");*/
-
+        i = getIntent();
+        String uname = i.getStringExtra("user1");
+        String pwd = i.getStringExtra("pass1");
+        unamer.setText(uname);
+        pwordr.setText(pwd);
 
 
         login.setOnClickListener(this);
 
-        reg.setOnClickListener(this);
+         reg.setOnClickListener(this);
 
 
     }
@@ -54,17 +52,19 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
 
+        String un = unamer.getText().toString();
+        String pwd = pwordr.getText().toString();
 
-
-       String uname = un.getText().toString();
-       String pword = pwd.getText().toString();
-       Intent in = new Intent(getApplicationContext(), RegisterPage.class);
+        Intent in = new Intent(getApplicationContext(), RegisterPage.class);
         startActivity(in);
-        if (username.equals(uname) && password.equals(pword)) {
-            Intent i = new Intent(getApplicationContext(), HomePage.class);
+
+        if (un.equals(uname) && pwd.equals(pwd)) {
+            Intent i1 = new Intent(getApplicationContext(), HomePage.class);
+            startActivity(i1);
             //passing username to homepage through intent
-            i.putExtra("user",uname);//user enna keyileku uname yil ullathine eduthu save cheyithu, ennittu intent vazhi homepagileku pass cheyyum
-            startActivity(i);
+            //   i.putExtra("user",uname);//user enna keyileku uname yil ullathine eduthu save cheyithu, ennittu intent vazhi homepagileku pass cheyyum
+
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_LONG).show();
             clickcount--;
@@ -76,7 +76,9 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         }
 
     }
+
 }
+
 
 
     //     1.  ***USING ANONYMOUS INNER CLASS****
