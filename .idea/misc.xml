@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_custom_list_view.xml" value="0.1640625" />
+        <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_grid_view.xml" value="0.1640625" />
         <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_home_page.xml" value="0.22" />
+        <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_home_page1.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_login_page.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/activity_register_page.xml" value="0.22" />
+        <entry key="..\:/Users/KANNAN/AndroidStudioProjects/MyApplicationMarch/app/src/main/res/layout/secondlayout.xml" value="0.1640625" />
       </map>
     </option>
   </component>

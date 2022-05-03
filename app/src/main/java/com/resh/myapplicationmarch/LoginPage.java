@@ -15,10 +15,10 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     EditText unamer, pwordr;
 
     Button login;
-    int clickcount=3;
+    int clickcount = 3;
     String uname;
     String pwd;
-    Intent i;
+    Intent i, i1;
     String user1, pass1;
 
     @Override
@@ -41,43 +41,45 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         unamer.setText(uname);
         pwordr.setText(pwd);
 
-
         login.setOnClickListener(this);
-
-         reg.setOnClickListener(this);
-
+        reg.setOnClickListener(this);
 
     }
+            @Override
+            public void onClick(View view) {
 
-    @Override
-    public void onClick(View view) {
+                String un = unamer.getText().toString();
+                String pwd = pwordr.getText().toString();
 
-        String un = unamer.getText().toString();
-        String pwd = pwordr.getText().toString();
+                if (un.equals(uname) && pwd.equals(pwd)) {
+                    Intent i = new Intent(getApplicationContext(), HomePage.class);
+                    startActivity(i);
+                    //passing username to homepage through intent
+                    i.putExtra("user", uname);//user enna keyileku uname yil ullathine eduthu save cheyithu, ennittu intent vazhi homepagileku pass cheyyum
 
-        Intent in = new Intent(getApplicationContext(), RegisterPage.class);
-        startActivity(in);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_LONG).show();
+                    clickcount--;
+                    if (clickcount == 0) {
 
-        if (un.equals(uname) && pwd.equals(pwd)) {
-            Intent i1 = new Intent(getApplicationContext(), HomePage.class);
-            startActivity(i1);
-            //passing username to homepage through intent
-            //   i.putExtra("user",uname);//user enna keyileku uname yil ullathine eduthu save cheyithu, ennittu intent vazhi homepagileku pass cheyyum
+                        login.setEnabled(false);
 
-            finish();
-        } else {
-            Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_LONG).show();
-            clickcount--;
-            if (clickcount == 0) {
-
-                login.setEnabled(false);
+                    }
+                }
 
             }
-        }
+
 
     }
 
-}
+
+
+
+
+
+
+
 
 
 

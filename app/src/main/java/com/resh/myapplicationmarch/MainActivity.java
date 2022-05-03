@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
                 startActivity(intent);
             }
         };
